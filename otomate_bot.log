@@ -5506,3 +5506,139 @@ Traceback (most recent call last):
   File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\telegram\utils\request.py", line 223, in _request_wrapper
     raise BadRequest(message)
 telegram.error.BadRequest: Wrong http url specified
+2019-07-09 19:48:05,406 - telegram.ext.dispatcher - WARNING - A TelegramError was raised while processing the Update
+2019-07-09 19:48:05,406 - telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 402, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 398, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\Hari Kesuma\AppData\Local\Programs\Python\Python36\lib\http\client.py", line 1331, in getresponse
+    response.begin()
+  File "C:\Users\Hari Kesuma\AppData\Local\Programs\Python\Python36\lib\http\client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\Hari Kesuma\AppData\Local\Programs\Python\Python36\lib\http\client.py", line 258, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\Hari Kesuma\AppData\Local\Programs\Python\Python36\lib\socket.py", line 586, in readinto
+    return self._sock.recv_into(b)
+  File "C:\Users\Hari Kesuma\AppData\Local\Programs\Python\Python36\lib\ssl.py", line 1002, in recv_into
+    return self.read(nbytes, buffer)
+  File "C:\Users\Hari Kesuma\AppData\Local\Programs\Python\Python36\lib\ssl.py", line 865, in read
+    return self._sslobj.read(len, buffer)
+  File "C:\Users\Hari Kesuma\AppData\Local\Programs\Python\Python36\lib\ssl.py", line 625, in read
+    v = self._sslobj.read(len, buffer)
+socket.timeout: The read operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\telegram\utils\request.py", line 203, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 70, in request
+    **urlopen_kw)
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 666, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\retry.py", line 347, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\packages\six.py", line 686, in reraise
+    raise value
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 617, in urlopen
+    chunked=chunked)
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 405, in _make_request
+    exc_cls=ReadTimeoutError)
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 321, in _raise_timeout
+    raise exc_cls(*args)
+telegram.vendor.ptb_urllib3.urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=5.0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\telegram\ext\dispatcher.py", line 279, in process_update
+    handler.handle_update(update, self)
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\telegram\ext\commandhandler.py", line 173, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "D:/Belajar GIT/Python/Dojo/otomate_bot/otomate_bot.py", line 15, in start
+    text="Hai {} :), Selamat datang di Otomate Bot. Kamu bisa dengan mudah untuk mendapatkan outline dari sebuah artikel, hanya dengan send linknya ke aku :). Contohnya /read https://www.otamtebot/artikel/python.com" . format((update.message.from_user.first_name) + ' ' + (update.message.from_user.last_name)))
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\telegram\bot.py", line 65, in decorator
+    result = func(self, *args, **kwargs)
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\telegram\bot.py", line 90, in decorator
+    result = self._request.post(url, data, timeout=kwargs.get('timeout'))
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\telegram\utils\request.py", line 309, in post
+    headers={'Content-Type': 'application/json'})
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\telegram\utils\request.py", line 205, in _request_wrapper
+    raise TimedOut()
+telegram.error.TimedOut: Timed out
+2019-07-09 19:50:00,164 - telegram.ext.dispatcher - ERROR - An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\telegram\ext\dispatcher.py", line 279, in process_update
+    handler.handle_update(update, self)
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\telegram\ext\commandhandler.py", line 173, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "D:/Belajar GIT/Python/Dojo/otomate_bot/otomate_bot.py", line 21, in read
+    linkbar.send_keys(update.message)
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\selenium\webdriver\remote\webelement.py", line 478, in send_keys
+    {'text': "".join(keys_to_typing(value)),
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\selenium\webdriver\common\utils.py", line 150, in keys_to_typing
+    for i in range(len(val)):
+TypeError: object of type 'Message' has no len()
+2019-07-12 12:48:57,654 - telegram.ext.dispatcher - WARNING - A TelegramError was raised while processing the Update
+2019-07-12 12:48:57,668 - telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\telegram\ext\dispatcher.py", line 279, in process_update
+    handler.handle_update(update, self)
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\telegram\ext\commandhandler.py", line 173, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "D:/Belajar GIT/Python/Dojo/otomate_bot/otomate_bot.py", line 35, in img
+    bot.send_photo(chat_id=update.message.chat_id, photo=random_image)
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\telegram\bot.py", line 65, in decorator
+    result = func(self, *args, **kwargs)
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\telegram\bot.py", line 90, in decorator
+    result = self._request.post(url, data, timeout=kwargs.get('timeout'))
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\telegram\utils\request.py", line 309, in post
+    headers={'Content-Type': 'application/json'})
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\telegram\utils\request.py", line 223, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Unsupported url protocol
+2019-07-12 13:00:30,733 - telegram.ext.dispatcher - ERROR - An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\telegram\ext\dispatcher.py", line 279, in process_update
+    handler.handle_update(update, self)
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\telegram\ext\messagehandler.py", line 169, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "D:/Belajar GIT/Python/Dojo/otomate_bot/otomate_bot.py", line 38, in echo
+    context.bot.send_message(chat_id=update.message.chat_id, text=update.message.text)
+AttributeError: 'Update' object has no attribute 'bot'
+2019-07-12 13:01:16,774 - telegram.ext.dispatcher - ERROR - An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\telegram\ext\dispatcher.py", line 279, in process_update
+    handler.handle_update(update, self)
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\telegram\ext\messagehandler.py", line 169, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "D:/Belajar GIT/Python/Dojo/otomate_bot/otomate_bot.py", line 38, in echo
+    context.bot.send_message(chat_id=update.message.chat_id, text=update.message.text)
+AttributeError: 'Update' object has no attribute 'bot'
+2019-07-12 13:08:47,390 - telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'ConnectTimeoutError(<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x0000025ECD2D5978>, 'Connection to api.telegram.org timed out. (connect timeout=5.0)')': /bot856062988:AAElVBonRqiXe95Yh9WZdazhMv5l2_xzmTo/getUpdates
+2019-07-12 13:08:52,405 - telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None)) after connection broken by 'ConnectTimeoutError(<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x0000025ECD2D5E80>, 'Connection to api.telegram.org timed out. (connect timeout=5.0)')': /bot856062988:AAElVBonRqiXe95Yh9WZdazhMv5l2_xzmTo/getUpdates
+2019-07-12 13:08:57,407 - telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None)) after connection broken by 'ConnectTimeoutError(<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x0000025ECD296898>, 'Connection to api.telegram.org timed out. (connect timeout=5.0)')': /bot856062988:AAElVBonRqiXe95Yh9WZdazhMv5l2_xzmTo/getUpdates
+2019-07-12 13:36:36,351 - telegram.ext.dispatcher - ERROR - An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\telegram\ext\dispatcher.py", line 279, in process_update
+    handler.handle_update(update, self)
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\telegram\ext\commandhandler.py", line 173, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "D:/Belajar GIT/Python/Dojo/otomate_bot/otomate_bot.py", line 26, in read
+    bot.send_message(chat_id=update.message.chat_id, text= "Here your link " + browser.current_url)
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 669, in current_url
+    return self.execute(Command.GET_CURRENT_URL)['value']
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "D:\Belajar GIT\Python\Dojo\otomate_bot\venv\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: chrome not reachable
+  (Session info: chrome=75.0.3770.100)
+
