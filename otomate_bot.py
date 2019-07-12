@@ -41,7 +41,7 @@ def echo(bot, update):
 
 def main():
     # Create updater and pass in Bot's auth key.
-    updater = Updater(token='856062988:AAElVBonRqiXe95Yh9WZdazhMv5l2_xzmTo')
+    updater = Updater(token='YOUR_TOKEN')
     # Get dispatcher to register handlers
     dispatcher = updater.dispatcher
     # answer commands
